@@ -22,14 +22,14 @@ def submit():
     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
     cursor = cnx.cursor()
     insert_stmt = (
-        "INSERT INTO Customer (firstname, lastname) "
-        "VALUES (%s, %s)"
+        "INSERT INTO Customer (firstname, lastname, EmailAddress, Sex) "
+        "VALUES (%s, %s, %s, %s)"
     )
-    data = (request.form['firstname'], request.form['lastname'])
+    data = (request.form['firstname'], request.form['lastname'], request.form['email'], request.form['sex'])
     cursor.execute(insert_stmt, data)
     cnx.commit()
     cnx.close()
-    return render_template('index.html', firstname=request.form['firstname'], lastnaCme=request.form['lastname'])
+    return render_template('index.html', firstname=request.form['firstname'], lastname=request.form['lastname'], email=request.form['email'], sex=request.form['sex'])
 
 @app.route('/sqlInjection')
 def sqlInjection(name=None):
