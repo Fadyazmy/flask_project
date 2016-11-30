@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+
+            <div>
+                 {% for user in users %}
+            <span>{{ user.0 }}{{ user.1 }} {{ user.2 }}</span><br />
+                    {% endfor %}
+        </div>
+        <div>
+            <a href="/entername">Add another</a><br />
+            <a href="/sqlInjection">Try a SQL injection attack</a>
+        </div>
+</head>
+<body>
+
+</body>
+</html>
