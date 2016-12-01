@@ -13,8 +13,15 @@ def hello():
     cnx.close()
     return render_template('users.html',users=users)
 
-@app.route('/entername')
-def helloName(name=None):
+
+@app.route("/home")
+def home():
+    return render_template('index2.html')
+
+
+
+@app.route('/movies')
+def movies(name=None):
     return render_template('form.html', name=name)
 
 @app.route('/submit', methods=["POST"])
