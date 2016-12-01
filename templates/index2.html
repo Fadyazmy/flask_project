@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <a href="/home">Home </a>
     <title>Home page</title>
     <h1>Front-End</h1>
+    {%  if formType %}
+    Insert {{  formType  }} succesfully
+    {% if type %}
+        with {{ type }}
+        {% endif%}
+    {% endif %}
     <ul>
         <li>
-           <a href="/movies">Movies </a>
+           <a href="/back-end/movies">Movies </a>
         </li>
         <li>
-            <a href="/entername">Genres </a>
+            <a href="/back-end/genres">Genres </a>
         </li>
         <li>
-            <a href="/entername">Rooms </a>
+            <a href="/back-end/rooms">Rooms </a>
         </li>
         <li>
-            <a href="/entername">Showings </a>
+            <a href="/back-end/showings">Showings </a>
         </li>
         <li>
-            <a href="/entername">Customers </a>
+            <a href="/back-end/customers">Customers </a>
         </li>
         <li>
-            <a href="/entername">Attend </a>
+            <a href="/back-end/attend">Attend </a>
         </li>
     </ul>
 

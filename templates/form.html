@@ -5,17 +5,47 @@
     <title>Form</title>
 
 
-     <form action="/submit" method="post">
-     First name:<br>
-     <input type="text" name="firstname" value=""><br>
-     Last name:<br>
-     <input type="text" name="lastname" value=""><br><br>
-         Email:<br>
-     <input type="text" name="email" value=""><br><br>
-         Sex (M/F):<br>
-     <input type="text" name="sex" value=""><br><br>
-     <input type="submit" value="Submit">
- </form>
+    {%   if formType == 'movies' %}
+    <h1>MOVIES</h1>
+        <form action="/submit/movies" method="post">
+         Movie name:<br>
+            <input type="text" name="movieName" value=""><br><br>
+         Movie year:<br>
+            <input type="number" name="movieYear" value=""><br><br>
+         <input type="submit" value="Submit">
+     </form>
+
+
+
+
+    {% elif formType == 'genres' %}
+        <h1>GENRES</h1>
+    <form action="/submit/movies" method="post">
+         Genre name:<br>
+            <input type="text" name="Genre" value=""><br><br>
+         MovieID:<br>
+            <input type="number" name="Movie_idMovie" value=""><br><br>
+         <input type="submit" value="Submit">
+     </form>
+    {% endif %}
+
+{#     <form action="/submit" method="post">#}
+{#     First name:<br>#}
+{#     <input type="text" name="firstname" value=""><br>#}
+{#     Last name:<br>#}
+{#     <input type="text" name="lastname" value=""><br><br>#}
+{#         Email:<br>#}
+{#     <input type="text" name="email" value=""><br><br>#}
+{#         Sex (M/F):<br>#}
+{#     <input type="text" name="sex" value=""><br><br>#}
+{#     <input type="submit" value="Submit">#}
+{# </form>#}
+
+
+
+
+
+
 </head>
 <body>
 
