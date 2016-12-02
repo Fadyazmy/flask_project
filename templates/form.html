@@ -249,7 +249,7 @@
             </form>
 
 
-            <h3>Modify Showing Price</h3>
+            <h3>Modify Customer </h3>
                 <form action="/submit/update/customers" method="post">
                     Customer ID:<br>
                    <select name="idCustomer">
@@ -273,6 +273,27 @@
                     {% for showing in list %}
                             <span>{{ showing.0 }} {{ showing.1 }} {{showing.2}} {{showing.3}} </span><br />
                     {% endfor %}
+
+
+
+
+
+
+
+
+        {#SHOWINGS CUSTOMER#}
+         {% elif formType == 'attend' %}
+        <h1>Attendees</h1>
+
+                    <br><br>
+                FirstName   | LastName   | EmailAddress       | Sex  <br>
+                    {% for attendee in list %}
+                            <span>{{ attendee.0 }} {{ attendee.1 }} {{attendee.2}} {{attendee.3}} </span><br />
+                    {% endfor %}
+
+
+
+
 
 
 

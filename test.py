@@ -44,6 +44,9 @@ def movies(type=None):
         query = ("SELECT * FROM Showing ORDER BY ShowingDateTime ASC")
     elif type == "customers":
         query = ("SELECT * FROM Customer ORDER BY LastName ASC")
+    elif type == "attend":
+        query = ("SELECT FirstName, LastName, idShowing, ShowingDateTime, movieName FROM Customer, Showing, TheatreRoom, Movie, Attend WHERE Attend.Customer_idCustomer = Customer.idCustomer AND Attend.Showing_idShowing = Showing.idShowing ORDER BY Attend.Rating ASC")
+
 
     cursor.execute(query)
     list = cursor.fetchall()
@@ -154,6 +157,28 @@ def submit(subType=None, actionType=None):
 
     #############CUSTOMER
     elif subType == "customers":
+        if actionType == "add":
+            insert_stmt = (
+                "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "
+                "VALUES (%s, %s, %s, %s)"
+            )
+            data = (request.form['FirstName'], request.form['LastName'], request.form['EmailAddress'], request.form['Sex'])
+            test = request.form['FirstName']
+        elif actionType == "delete":
+            insert_stmt = (
+                "DELETE FROM Customer WHERE idCustomer =%s"
+            )
+            data = (request.form['idCustomer'])
+            test = request.form['idCustomer']
+        elif actionType == "update":
+            insert_stmt = (""" UPDATE Customer
+                                    SET FirstName =%s, LastName =%s, EmailAddress =%s, Sex =%s
+                                    WHERE idCustomer =%s """)
+            data = (request.form['FirstName'],request.form['LastName'], request.form['EmailAddress'],request.form['Sex'],request.form['idCustomer'])
+            test = request.form['FirstName']
+
+    #############Attend
+    elif subType == "attend":
         if actionType == "add":
             insert_stmt = (
                 "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "
