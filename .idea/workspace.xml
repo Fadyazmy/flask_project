@@ -24,31 +24,36 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+            <state relative-caret-position="788">
+              <caret line="147" column="42" selection-start-line="147" selection-start-column="42" selection-end-line="147" selection-end-column="42" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
-                <marker date="1480649911000" expanded="true" signature="238:260" ph="SELECT * fro... Customer" />
-                <marker date="1480649911000" expanded="true" signature="562:622" ph="SELECT * fro... Customer" />
-                <marker date="1480649911000" expanded="true" signature="951:995" ph="SELECT * FRO... movie" />
-                <marker date="1480649911000" expanded="true" signature="959:995" ph="INSERT INTO Movie... " />
-                <marker date="1480649911000" expanded="true" signature="1042:1080" ph="SELECT * FRO... Genre" />
-                <marker date="1480649911000" expanded="true" signature="1170:1184" ph="SELECT * FRO... elif" />
-                <marker date="1480649911000" expanded="true" signature="1170:1195" ph="SELECT * FRO... Genre" />
-                <marker date="1480649911000" expanded="true" signature="1802:1877" ph="INSERT INTO Movie... " />
-                <marker date="1480649911000" expanded="true" signature="2137:2193" ph="DELETE FROM " />
-                <marker date="1480649911000" expanded="true" signature="2143:2193" ph="INSERT INTO Movie... " />
-                <marker date="1480649911000" expanded="true" signature="2395:2509" ph="UPDATE Movie... " />
-                <marker date="1480649911000" expanded="true" signature="2395:3088" ph="UPDATE Movie... " />
-                <marker date="1480649911000" expanded="true" signature="2796:2875" ph="INSERT INTO GENRE... " />
-                <marker date="1480649911000" expanded="true" signature="3088:3142" ph="DELETE FROM " />
-                <marker date="1480649911000" expanded="true" signature="3088:5781" ph="DELETE FROM " />
-                <marker date="1480649911000" expanded="true" signature="3407:3488" ph="INSERT INTO Showing... " />
-                <marker date="1480649911000" expanded="true" signature="3706:3750" ph="DELETE FROM " />
-                <marker date="1480649911000" expanded="true" signature="3932:4024" ph="INSERT INTO Customer... " />
-                <marker date="1480649911000" expanded="true" signature="4185:4264" ph="INSERT INTO Attend... " />
-                <marker date="1480649911000" expanded="true" signature="4717:4815" ph="INSERT INTO Customer... " />
-                <marker date="1480649911000" expanded="true" signature="5507:5567" ph="SELECT * fro... Customer" />
+                <marker date="1480698366000" expanded="true" signature="248:270" ph="SELECT * fro... Customer" />
+                <marker date="1480698366000" expanded="true" signature="576:636" ph="SELECT * fro... Customer" />
+                <marker date="1480698366000" expanded="true" signature="965:1009" ph="SELECT * FRO... movie" />
+                <marker date="1480698366000" expanded="true" signature="973:1009" ph="INSERT INTO Movie... " />
+                <marker date="1480698366000" expanded="true" signature="1056:1094" ph="SELECT * FRO... Genre" />
+                <marker date="1480698366000" expanded="true" signature="1184:1198" ph="SELECT * FRO... elif" />
+                <marker date="1480698366000" expanded="true" signature="1184:1209" ph="SELECT * FRO... Genre" />
+                <marker date="1480698366000" expanded="true" signature="1259:1309" ph="SELECT * FRO... Showing" />
+                <marker date="1480698366000" expanded="true" signature="1874:1949" ph="INSERT INTO Movie... " />
+                <marker date="1480698366000" expanded="true" signature="2166:2222" ph="DELETE FROM " />
+                <marker date="1480698366000" expanded="true" signature="2172:2222" ph="INSERT INTO Movie... " />
+                <marker date="1480698366000" expanded="true" signature="2424:2538" ph="UPDATE Movie... " />
+                <marker date="1480698366000" expanded="true" signature="2424:3117" ph="UPDATE Movie... " />
+                <marker date="1480698366000" expanded="true" signature="2825:2904" ph="INSERT INTO GENRE... " />
+                <marker date="1480698366000" expanded="true" signature="3117:3171" ph="DELETE FROM " />
+                <marker date="1480698366000" expanded="true" signature="3117:7180" ph="DELETE FROM " />
+                <marker date="1480698366000" expanded="true" signature="3436:3517" ph="INSERT INTO Showing... " />
+                <marker date="1480698366000" expanded="true" signature="3735:3779" ph="DELETE FROM " />
+                <marker date="1480698366000" expanded="true" signature="3957:4087" ph="UPDATE Theat... " />
+                <marker date="1480698366000" expanded="true" signature="4350:4482" ph="INSERT INTO Showing... " />
+                <marker date="1480698366000" expanded="true" signature="4784:4823" ph="DELETE FROM " />
+                <marker date="1480698366000" expanded="true" signature="4999:5127" ph="UPDATE Showi... " />
+                <marker date="1480698366000" expanded="true" signature="5331:5423" ph="INSERT INTO Customer... " />
+                <marker date="1480698366000" expanded="true" signature="5584:5663" ph="INSERT INTO Attend... " />
+                <marker date="1480698366000" expanded="true" signature="6116:6214" ph="INSERT INTO Customer... " />
+                <marker date="1480698366000" expanded="true" signature="6906:6966" ph="SELECT * fro... Customer" />
               </folding>
             </state>
           </provider>
@@ -57,28 +62,8 @@
       <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="121" column="47" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/form2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="319">
+              <caret line="185" column="36" selection-start-line="185" selection-start-column="36" selection-end-line="185" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -102,8 +87,8 @@
         <option value="$PROJECT_DIR$/templates/users.html" />
         <option value="$PROJECT_DIR$/templates/movies.html" />
         <option value="$PROJECT_DIR$/templates/index2.html" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/templates/form.html" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -115,8 +100,24 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1005" />
+    <option name="width" value="1556" />
+    <option name="height" value="1003" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -146,38 +147,7 @@
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -434,10 +404,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1005" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1556" height="1003" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07827476" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09709379" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -445,7 +415,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16100767" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -466,8 +436,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16100767" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07827476" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09709379" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -543,39 +513,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="121" column="47" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="47" />
+        <state relative-caret-position="319">
+          <caret line="185" column="36" selection-start-line="185" selection-start-column="36" selection-end-line="185" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+        <state relative-caret-position="788">
+          <caret line="147" column="42" selection-start-line="147" selection-start-column="42" selection-end-line="147" selection-end-column="42" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-            <marker date="1480649911000" expanded="true" signature="238:260" ph="SELECT * fro... Customer" />
-            <marker date="1480649911000" expanded="true" signature="562:622" ph="SELECT * fro... Customer" />
-            <marker date="1480649911000" expanded="true" signature="951:995" ph="SELECT * FRO... movie" />
-            <marker date="1480649911000" expanded="true" signature="959:995" ph="INSERT INTO Movie... " />
-            <marker date="1480649911000" expanded="true" signature="1042:1080" ph="SELECT * FRO... Genre" />
-            <marker date="1480649911000" expanded="true" signature="1170:1184" ph="SELECT * FRO... elif" />
-            <marker date="1480649911000" expanded="true" signature="1170:1195" ph="SELECT * FRO... Genre" />
-            <marker date="1480649911000" expanded="true" signature="1802:1877" ph="INSERT INTO Movie... " />
-            <marker date="1480649911000" expanded="true" signature="2137:2193" ph="DELETE FROM " />
-            <marker date="1480649911000" expanded="true" signature="2143:2193" ph="INSERT INTO Movie... " />
-            <marker date="1480649911000" expanded="true" signature="2395:2509" ph="UPDATE Movie... " />
-            <marker date="1480649911000" expanded="true" signature="2395:3088" ph="UPDATE Movie... " />
-            <marker date="1480649911000" expanded="true" signature="2796:2875" ph="INSERT INTO GENRE... " />
-            <marker date="1480649911000" expanded="true" signature="3088:3142" ph="DELETE FROM " />
-            <marker date="1480649911000" expanded="true" signature="3088:5781" ph="DELETE FROM " />
-            <marker date="1480649911000" expanded="true" signature="3407:3488" ph="INSERT INTO Showing... " />
-            <marker date="1480649911000" expanded="true" signature="3706:3750" ph="DELETE FROM " />
-            <marker date="1480649911000" expanded="true" signature="3932:4024" ph="INSERT INTO Customer... " />
-            <marker date="1480649911000" expanded="true" signature="4185:4264" ph="INSERT INTO Attend... " />
-            <marker date="1480649911000" expanded="true" signature="4717:4815" ph="INSERT INTO Customer... " />
-            <marker date="1480649911000" expanded="true" signature="5507:5567" ph="SELECT * fro... Customer" />
+            <marker date="1480698366000" expanded="true" signature="248:270" ph="SELECT * fro... Customer" />
+            <marker date="1480698366000" expanded="true" signature="576:636" ph="SELECT * fro... Customer" />
+            <marker date="1480698366000" expanded="true" signature="965:1009" ph="SELECT * FRO... movie" />
+            <marker date="1480698366000" expanded="true" signature="973:1009" ph="INSERT INTO Movie... " />
+            <marker date="1480698366000" expanded="true" signature="1056:1094" ph="SELECT * FRO... Genre" />
+            <marker date="1480698366000" expanded="true" signature="1184:1198" ph="SELECT * FRO... elif" />
+            <marker date="1480698366000" expanded="true" signature="1184:1209" ph="SELECT * FRO... Genre" />
+            <marker date="1480698366000" expanded="true" signature="1259:1309" ph="SELECT * FRO... Showing" />
+            <marker date="1480698366000" expanded="true" signature="1874:1949" ph="INSERT INTO Movie... " />
+            <marker date="1480698366000" expanded="true" signature="2166:2222" ph="DELETE FROM " />
+            <marker date="1480698366000" expanded="true" signature="2172:2222" ph="INSERT INTO Movie... " />
+            <marker date="1480698366000" expanded="true" signature="2424:2538" ph="UPDATE Movie... " />
+            <marker date="1480698366000" expanded="true" signature="2424:3117" ph="UPDATE Movie... " />
+            <marker date="1480698366000" expanded="true" signature="2825:2904" ph="INSERT INTO GENRE... " />
+            <marker date="1480698366000" expanded="true" signature="3117:3171" ph="DELETE FROM " />
+            <marker date="1480698366000" expanded="true" signature="3117:7180" ph="DELETE FROM " />
+            <marker date="1480698366000" expanded="true" signature="3436:3517" ph="INSERT INTO Showing... " />
+            <marker date="1480698366000" expanded="true" signature="3735:3779" ph="DELETE FROM " />
+            <marker date="1480698366000" expanded="true" signature="3957:4087" ph="UPDATE Theat... " />
+            <marker date="1480698366000" expanded="true" signature="4350:4482" ph="INSERT INTO Showing... " />
+            <marker date="1480698366000" expanded="true" signature="4784:4823" ph="DELETE FROM " />
+            <marker date="1480698366000" expanded="true" signature="4999:5127" ph="UPDATE Showi... " />
+            <marker date="1480698366000" expanded="true" signature="5331:5423" ph="INSERT INTO Customer... " />
+            <marker date="1480698366000" expanded="true" signature="5584:5663" ph="INSERT INTO Attend... " />
+            <marker date="1480698366000" expanded="true" signature="6116:6214" ph="INSERT INTO Customer... " />
+            <marker date="1480698366000" expanded="true" signature="6906:6966" ph="SELECT * fro... Customer" />
           </folding>
         </state>
       </provider>

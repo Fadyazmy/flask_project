@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Form</title>
 
-    {#Typeform SECTION#}
+    {#MOVIE SECTION#}
     {%   if formType == 'movies' %}
     <h1>MOVIES</h1>
         <h3>Add movie</h3>
@@ -15,7 +15,6 @@
             <input type="number" min="0" name="movieYear" value=""><br><br>
          <input type="submit" value="Submit">
      </form>
-
 
 
 
@@ -35,7 +34,6 @@
             <input type="number" min="0" name="movieYear" value=""><br><br>
          <input type="submit" value="Submit">
      </form>
-
 
 
 
@@ -99,7 +97,7 @@
 
 
 
-
+    {#ROOMS SECTION#}
     {% elif formType == 'rooms' %}
         <h1>Room</h1>
         <h3>Add Room</h3>
@@ -115,23 +113,97 @@
             </form>
 
 
+        <h3>Delete Room</h3>
+            <form action="/submit/delete/rooms" method="post">
+                Room number:<br>
+               <select name="RoomNumber">
+                   {% for room in list %}
+                        <option value="{{ room.0 }}">{{ room.0 }}</option>
+                   {% endfor %}
+               </select>
+                <input type="submit" value="Submit">
+            </form>
 
-                <h3>Delete Room</h3>
-                    <form action="/submit/delete/rooms" method="post">
-                 Room number:<br>
-                       <select name="RoomNumber">
-                           {% for room in list %}
-                                <option value="{{ room.0 }}">{{ room.0 }}</option>
-                           {% endfor %}
-                       </select>
-                 <input type="submit" value="Submit">
-                    </form>
+
+            <h3>Modify Room</h3>
+                <form action="/submit/update/rooms" method="post">
+                    Room number:<br>
+                   <select name="RoomNumber">
+                       {% for room in list %}
+                            <option value="{{ room.0 }}">{{ room.0 }}</option>
+                       {% endfor %}
+                   </select>
+                <br>
+                Room Capacity: <br>
+                    <input type="text" name="Capacity" value="">
+             <input type="submit" value="Submit">
+                </form>
+                    <br><br>
+                Room number || Capacity <br>
+                    {% for room in list %}
+                            <span>{{ room.0 }}  {{ room.1  }}</span><br />
+                    {% endfor %}
 
 
-        Room number || Capacity <br>
-            {% for room in list %}
-                    <span>{{ room.0 }}  {{ room.1  }}</span><br />
-            {% endfor %}
+
+
+        {#SHOWINGS SECTION#}
+         {% elif formType == 'showings' %}
+        <h1>SHOWINGS</h1>
+        <h3>Add Showings</h3>
+            <form action="/submit/add/showings" method="post">
+                Showing DateTime:
+                    <br>
+                    <input type="date" name="ShowingDateTime" value=""><br>
+                Movie_id:
+                    <br>
+                    <input type="number" name="Movie_idMovie" value="">
+                    <br>
+                TheatreRoom_Room Number:
+                    <br>
+                    <input type="number" name="TheatreRoom_RoomNumber" value="">
+                    <br>
+                TicketPrice:
+                    <br>
+                    <input type="number" name="TicketPrice" value="">
+                    <br>
+                <input type="submit" value="Submit">
+            </form>
+
+
+        <h3>Delete Showing</h3>
+            <form action="/submit/delete/showings" method="post">
+                SHOWING ID:<br>
+               <select name="idShowing">
+                   {% for showing in list %}
+                        <option value="{{ showing.0 }}">{{ showing.0 }}</option>
+                   {% endfor %}
+               </select>
+                <input type="submit" value="Submit">
+            </form>
+
+
+            <h3>Modify Showing Price</h3>
+                <form action="/submit/update/showings" method="post">
+                    SHOWING ID:<br>
+                   <select name="idShowing">
+                       {% for showing in list %}
+                            <option value="{{ showing.0 }}">{{ showing.0 }}</option>
+                       {% endfor %}
+                   </select>
+                <br>
+                TicketPrice: <br>
+                    <input type="text" name="TicketPrice" value="">
+             <input type="submit" value="Submit">
+                </form>
+                    <br><br>
+                idShowing | ShowingDateTime  | Movie_idMovie | TheatreRoom_RoomNumber | TicketPrice  <br>
+                    {% for showing in list %}
+                            <span>{{ showing.0 }} {{ showing.1 }} {{showing.2}} {{showing.3}} {{showing.4}}</span><br />
+                    {% endfor %}
+
+
+
 
     {% endif %}
 

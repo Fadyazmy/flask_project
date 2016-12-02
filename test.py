@@ -3,18 +3,18 @@ import mysql.connector
 
 app = Flask(__name__)
 
+# @app.route("/")
+# def hello():
+#     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
+#     cursor = cnx.cursor()
+#     query = ("SELECT * from Customer")
+#     cursor.execute(query)
+#     users=cursor.fetchall()
+#     cnx.close()
+#     return render_template('users.html',users=users)
+
+
 @app.route("/")
-def hello():
-    cnx = mysql.connector.connect(user='root', database='MovieTheatre')
-    cursor = cnx.cursor()
-    query = ("SELECT * from Customer")
-    cursor.execute(query)
-    users=cursor.fetchall()
-    cnx.close()
-    return render_template('users.html',users=users)
-
-
-@app.route("/home")
 def home():
     return render_template('index2.html')
 
@@ -39,7 +39,9 @@ def movies(type=None):
     elif type == "genres":
         query = ("SELECT * FROM Genre ORDER BY Genre ASC ") #TODO: FIND INERSECT TO RETURN MOVIE NAME
     elif type == "rooms":
-        query = ("SELECT * FROM TheatreRoom") #TODO: FIND INERSECT TO RETURN MOVIE NAME
+        query = ("SELECT * FROM TheatreRoom")
+    elif type == "showings":
+        query = ("SELECT * FROM Showing ORDER BY ShowingDateTime ASC")
 
     cursor.execute(query)
     list = cursor.fetchall()
@@ -64,7 +66,6 @@ def submit(subType=None, actionType=None):
             )
             data = (request.form['movieName'], request.form['movieYear'])
             test = request.form['movieName']
-            print "INSERTING MOVIE" + test
         elif actionType == "delete":
             insert_stmt = (
                 "DELETE FROM Movie WHERE MovieName =%s AND MovieYear=%s "
@@ -115,6 +116,42 @@ def submit(subType=None, actionType=None):
             )
             data = (request.form['RoomNumber'])
             test = request.form['RoomNumber']
+        elif actionType == "update":
+            insert_stmt = (""" UPDATE TheatreRoom
+                                    SET Capacity = %s
+                                    WHERE RoomNumber = %s """)
+            data = (request.form['Capacity'],request.form['RoomNumber'])
+            test = request.form['RoomNumber']
+
+
+
+    #############SHOWINGS
+    elif subType == "showings":
+        if actionType == "add":
+            insert_stmt = (
+                "INSERT INTO Showing (ShowingDateTime, Movie_idMovie, TheatreRoom_RoomNumber, TicketPrice) "
+                "VALUES (%s, %s, %s, %s)"
+            )
+            data = (request.form['ShowingDateTime'], request.form['Movie_idMovie'], request.form['TheatreRoom_RoomNumber'], request.form['TicketPrice'])
+            test = request.form['ShowingDateTime']
+        elif actionType == "delete":
+            insert_stmt = (
+                "DELETE FROM Showing WHERE idShowing =%s"
+            )
+            data = (request.form['idShowing'])
+            test = request.form['idShowing']
+        elif actionType == "update":
+            insert_stmt = (""" UPDATE Showing
+                                    SET TicketPrice = %s
+                                    WHERE idShowing = %s """)
+            data = (request.form['TicketPrice'],request.form['idShowing'])
+            test = request.form['idShowing']
+
+
+
+
+
+
 
 
 
