@@ -54,7 +54,7 @@ def submit(subType=None, actionType=None):
     insert_stmt = None
     data = None
     test = None
-    #Filer request by to-be modified Table
+    #############MOVIES
     if subType == "movies":
         # Filer request by type of modification
         if actionType == "add":
@@ -81,7 +81,7 @@ def submit(subType=None, actionType=None):
 
 
 
-
+    #############GENRES
     elif subType == "genre":
         if actionType == "add":
             insert_stmt = (
@@ -100,7 +100,7 @@ def submit(subType=None, actionType=None):
 
 
 
-
+    #############ROOMS
     elif subType == "rooms":
         if actionType == "add":
             insert_stmt = (
@@ -108,9 +108,13 @@ def submit(subType=None, actionType=None):
                 "VALUES (%s, %s)"
             )
             data = (request.form['RoomNumber'], request.form['Capacity'])
-        test = request.form['RoomNumber']
-        elif actionType="d"
-
+            test = request.form['RoomNumber']
+        elif actionType == "delete":
+            insert_stmt = (
+                "DELETE FROM TheatreRoom WHERE RoomNumber =%s"
+            )
+            data = (request.form['RoomNumber'])
+            test = request.form['RoomNumber']
 
 
 

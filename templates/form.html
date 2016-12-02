@@ -68,7 +68,7 @@
          Movie ID:
             <select name="Movie_idMovie">
                      {% for movies in list %}
-                <option value="{{ movies.0 }} {{ movies.1 }} "> {{ movies.1 }} </option>
+                <option value="{{ movies.1 }}"> {{ movies.1 }} </option>
                      {% endfor %}
             </select>
             <br>Genre Name:
@@ -116,20 +116,22 @@
 
 
 
-                <h3>Delete Genre</h3>
-                   <form action="/submit/delete/genres" method="post">
-                 Genre name:<br>
-                    <input type="text" name="Genre" value=""><br><br>
-                 MovieID:<br>
-                    <input type="number" name="Movie_idMovie" value=""><br><br>
+                <h3>Delete Room</h3>
+                    <form action="/submit/delete/rooms" method="post">
+                 Room number:<br>
+                       <select name="RoomNumber">
+                           {% for room in list %}
+                                <option value="{{ room.0 }}">{{ room.0 }}</option>
+                           {% endfor %}
+                       </select>
                  <input type="submit" value="Submit">
-             </form>
+                    </form>
 
 
         Room number || Capacity <br>
             {% for room in list %}
                     <span>{{ room.0 }}  {{ room.1  }}</span><br />
-             {% endfor %}
+            {% endfor %}
 
     {% endif %}
 
