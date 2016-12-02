@@ -38,6 +38,9 @@ def movies(type=None):
         query = ("SELECT * FROM Movie ORDER BY MovieName ASC ")
     elif type == "genres":
         query = ("SELECT * FROM Genre ORDER BY Genre ASC ") #TODO: FIND INERSECT TO RETURN MOVIE NAME
+    elif type == "rooms":
+        query = ("SELECT * FROM TheatreRoom") #TODO: FIND INERSECT TO RETURN MOVIE NAME
+
     cursor.execute(query)
     list = cursor.fetchall()
     return render_template('form.html', formType=type, list=list )
@@ -74,6 +77,11 @@ def submit(subType=None, actionType=None):
                         WHERE idMovie = %s """)
             data = (request.form['movieName'],request.form['movieYear'], request.form['idMovie'])
             test = request.form['movieName']
+
+
+
+
+
     elif subType == "genre":
         if actionType == "add":
             insert_stmt = (
@@ -88,13 +96,24 @@ def submit(subType=None, actionType=None):
             )
             data = (request.form['Genre'], request.form['Movie_idMovie'])
             test = request.form['Genre']
-    elif subType == "showing":
+
+
+
+
+
+    elif subType == "rooms":
         if actionType == "add":
             insert_stmt = (
-                "INSERT INTO Showing (Genre, Movie_idMovie) "
-                "VALUES (%s, %d)"
+                "INSERT INTO TheatreRoom (RoomNumber, Capacity) "
+                "VALUES (%s, %s)"
             )
-            data = (request.form['movieName'], request.form['Movie_idMovie'])
+            data = (request.form['RoomNumber'], request.form['Capacity'])
+        test = request.form['RoomNumber']
+        elif actionType="d"
+
+
+
+
     elif subType == "customer":
         insert_stmt = (
             "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "

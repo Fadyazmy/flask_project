@@ -49,32 +49,35 @@
             <input type="number" min="0" name="movieYear" value=""><br><br>
          <input type="submit" value="Submit">
         </form>
-
         <br>
         <h3>LIST OF MOVIES </h3><br>
      {% for movies in list %}
             <span>{{ movies.0 }} {{ movies.1 }} {{ movies.2 }} </span><br />
      {% endfor %}
 
+
+
+
+
+
     {#GENRE SECTION#}
     {% elif formType == 'genres' %}
         <h1>GENRES</h1>
         <h3>Add Genre</h3>
-
     <form action="/submit/add/genres" method="post">
          Movie ID:
             <select name="Movie_idMovie">
                      {% for movies in list %}
                 <option value="{{ movies.0 }} {{ movies.1 }} "> {{ movies.1 }} </option>
-     {% endfor %}
-
+                     {% endfor %}
             </select>
-    <br>
-    Genre Name:
+            <br>Genre Name:
             <input type="text" name="Genre" value=""><br><br>
-         <br>
-         <input type="submit" value="Submit">
-     </form>
+            <br>
+            <input type="submit" value="Submit">
+    </form>
+
+
 
         <h3>Delete Genre</h3>
            <form action="/submit/delete/genres" method="post">
@@ -90,8 +93,43 @@
             <span>{{ genre.0 }}  </span><br />
      {% endfor %}
 
-    {% elif formType == 'customer' %}
 
+
+
+
+
+
+
+    {% elif formType == 'rooms' %}
+        <h1>Room</h1>
+        <h3>Add Room</h3>
+            <form action="/submit/add/rooms" method="post">
+                 Room number:
+                    <br>
+                    <input type="text" name="RoomNumber" value=""><br>
+                Capacity:
+                    <br>
+                    <input type="text" name="Capacity" value="">
+                    <br>
+                    <input type="submit" value="Submit">
+            </form>
+
+
+
+                <h3>Delete Genre</h3>
+                   <form action="/submit/delete/genres" method="post">
+                 Genre name:<br>
+                    <input type="text" name="Genre" value=""><br><br>
+                 MovieID:<br>
+                    <input type="number" name="Movie_idMovie" value=""><br><br>
+                 <input type="submit" value="Submit">
+             </form>
+
+
+        Room number || Capacity <br>
+            {% for room in list %}
+                    <span>{{ room.0 }}  {{ room.1  }}</span><br />
+             {% endfor %}
 
     {% endif %}
 
