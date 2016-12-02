@@ -4,29 +4,46 @@
     <meta charset="UTF-8">
     <title>Form</title>
 
-
+    {#Typeform SECTION#}
     {%   if formType == 'movies' %}
     <h1>MOVIES</h1>
-        <form action="/submit/movies" method="post">
+        <h3>Add movie</h3>
+        <form action="/submit/add/movies" method="post">
          Movie name:<br>
             <input type="text" name="movieName" value=""><br><br>
          Movie year:<br>
-            <input type="number" name="movieYear" value=""><br><br>
+            <input type="number" min="0" name="movieYear" value=""><br><br>
          <input type="submit" value="Submit">
      </form>
 
+        <h3>Delete movie</h3>
+        <form action="/submit/del/movies" method="post">
+         Movie name:<br>
+            <input type="text" name="movieName" value=""><br><br>
+         Movie year:<br>
+            <input type="number" min="0" name="movieYear" value=""><br><br>
+         <input type="submit" value="Submit">
+        </form>
 
+        <br>
+        <h3>LIST OF MOVIES </h3><br>
+     {% for movies in list %}
+            <span>{{ movies.0 }} {{ movies.1 }} {{ movies.2 }} </span><br />
+     {% endfor %}
 
-
+    {#GENRE SECTION#}
     {% elif formType == 'genres' %}
         <h1>GENRES</h1>
-    <form action="/submit/movies" method="post">
+    <form action="/submit/ADD/movies" method="post">
          Genre name:<br>
             <input type="text" name="Genre" value=""><br><br>
          MovieID:<br>
             <input type="number" name="Movie_idMovie" value=""><br><br>
          <input type="submit" value="Submit">
      </form>
+    {% elif formType == 'customer' %}
+
+
     {% endif %}
 
 {#     <form action="/submit" method="post">#}

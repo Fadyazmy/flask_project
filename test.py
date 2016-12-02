@@ -19,59 +19,89 @@ def home():
     return render_template('index2.html')
 
 
+# cnx = mysql.connector.connect(user='root', database='mydb')
+# cursor = cnx.cursor()
+# query = ("SELECT * from Customer where firstname = '" + firstName + "'")
+# cursor.execute(query)
+# print("Attempting: " + query)
+# users = cursor.fetchall()
+#
+# cnx.commit()
+# cnx.close()
 
 @app.route('/back-end/<type>')
 def movies(type=None):
-    return render_template('form.html', formType=type)
+    cnx = mysql.connector.connect(user='root', database='MovieTheatre')
+    cursor = cnx.cursor()
+    if type == "movies":
+        query = ("SELECT * FROM Movie ORDER BY MovieName ASC ")
+    elif type == "genre":
+        query = ("SELECT * FROM Genre ORDER BY Genre ASC ")
+    cursor.execute(query)
+    list = cursor.fetchall()
+    return render_template('form.html', formType=type, list=list )
 
 
 
 
 
-@app.route('/submit/<subType>', methods=["POST"])
-def submit(subType=None):
+@app.route('/submit/<actionType>/<subType>', methods=["POST"])
+def submit(subType=None, actionType=None):
     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
     cursor = cnx.cursor()
     insert_stmt = None
     data = None
     test = None
-    if subType == "movie":
-        insert_stmt = (
-            "INSERT INTO Movie (MovieName, MovieYear) "
-            "VALUES (%s, %d)"
-        )
-        data = (request.form['movieName'], request.form['movieYear'])
-        test = request.form['movieName']
+    #Filer request by to-be modified Table
+    if subType == "movies":
+        # Filer request by type of modification
+        if actionType == "add":
+            insert_stmt = (
+                "INSERT INTO Movie (MovieName, MovieYear) "
+                "VALUES (%s, %s)"
+            )
+            data = (request.form['movieName'], request.form['movieYear'])
+            test = request.form['movieName']
+            print "INSERTING MOVIE" + test
+        elif actionType == "del":
+            insert_stmt = (
+                "DELETE FROM Movie WHERE MovieName =%s AND MovieYear=%s "
+            )
+            data = (request.form['movieName'], request.form['movieYear'])
+            test = request.form['movieName']
     elif subType == "genre":
-        insert_stmt = (
-            "INSERT INTO GENRE (Genre, Movie_idMovie) "
-            "VALUES (%s, %d)"
-        )
-        data = (request.form['Genre'], request.form['Movie_idMovie'])
-        test = request.form['Genre']
+        if actionType == "add":
+            insert_stmt = (
+                    "INSERT INTO GENRE (Genre, Movie_idMovie) "
+                    "VALUES (%s, %s)"
+                )
+            data = (request.form['Genre'], request.form['Movie_idMovie'])
+            test = request.form['Genre']
     elif subType == "showing":
-        insert_stmt = (
-            "INSERT INTO Showing (Genre, Movie_idMovie) "
-            "VALUES (%s, %d)"
-        )
-        data = (request.form['movieName'], request.form['Movie_idMovie'])
+        if actionType == "add":
+            insert_stmt = (
+                "INSERT INTO Showing (Genre, Movie_idMovie) "
+                "VALUES (%s, %d)"
+            )
+            data = (request.form['movieName'], request.form['Movie_idMovie'])
     elif subType == "customer":
         insert_stmt = (
-            "INSERT INTO Customer (Genre, Movie_idMovie) "
+            "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "
             "VALUES (%s, %d)"
         )
         data = (request.form['movieName'], request.form['Movie_idMovie'])
-    elif subType == "attend":
+    else:
+        subType == "attend"
         insert_stmt = (
-            "INSERT INTO Customer (Genre, Movie_idMovie) "
-            "VALUES (%s, %d)"
+            "INSERT INTO Attend (Showing_idShowing, Rating) "
+            "VALUES (%s,   %d)"
         )
         data = (request.form['movieName'], request.form['Movie_idMovie'])
 
     cursor.execute(insert_stmt, data)
     cnx.commit()
     cnx.close()
-    return render_template('index2.html', formType=subType, test = test)
+    return render_template('index2.html', formType=subType, test = test, actionType = actionType)
 
 
 
