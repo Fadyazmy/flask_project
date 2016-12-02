@@ -205,6 +205,78 @@
 
 
 
+
+
+
+
+
+
+
+
+        {#SHOWINGS CUSTOMER#}
+         {% elif formType == 'customers' %}
+        <h1>CUSTOMER</h1>
+        <h3>Add Customer</h3>
+            <form action="/submit/add/customers" method="post">
+                First Name:
+                    <br>
+                    <input type="text" name="FirstName" value=""><br>
+                Last Name:
+                    <br>
+                    <input type="text" name="LastName" value="">
+                    <br>
+                Email Address:
+                    <br>
+                    <input type="text" name="EmailAddress" value="">
+                    <br>
+                Sex (M/F):
+                    <br>
+                    <input type="text" name="Sex" value="">
+                    <br>
+                <input type="submit" value="Submit">
+            </form>
+
+
+        <h3>Delete Customer</h3>
+            <form action="/submit/delete/customers" method="post">
+                Customer ID:<br>
+               <select name="idCustomer">
+                   {% for showing in list %}
+                        <option value="{{ showing.0 }}">{{ showing.0 }}</option>
+                   {% endfor %}
+               </select>
+                <input type="submit" value="Submit">
+            </form>
+
+
+            <h3>Modify Showing Price</h3>
+                <form action="/submit/update/customers" method="post">
+                    Customer ID:<br>
+                   <select name="idCustomer">
+                       {% for showing in list %}
+                            <option value="{{ showing.0 }}">{{ showing.0 }}</option>
+                       {% endfor %}
+                   </select>
+                <br>
+                Customer First Name:
+                    <input type="text" name="FirstName" value=""><br>
+                Customer Last Name:
+                    <input type="text" name="LastName" value=""><br>
+                Customer Email:
+                    <input type="text" name="EmailAddress" value=""><br>
+                Customer Sex(M/F):
+                    <input type="text" name="Sex" value=""><br>
+             <input type="submit" value="Submit">
+                </form>
+                    <br><br>
+                FirstName   | LastName   | EmailAddress       | Sex  <br>
+                    {% for showing in list %}
+                            <span>{{ showing.0 }} {{ showing.1 }} {{showing.2}} {{showing.3}} </span><br />
+                    {% endfor %}
+
+
+
+
     {% endif %}
 
 {#     <form action="/submit" method="post">#}

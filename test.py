@@ -42,6 +42,8 @@ def movies(type=None):
         query = ("SELECT * FROM TheatreRoom")
     elif type == "showings":
         query = ("SELECT * FROM Showing ORDER BY ShowingDateTime ASC")
+    elif type == "customers":
+        query = ("SELECT * FROM Customer ORDER BY LastName ASC")
 
     cursor.execute(query)
     list = cursor.fetchall()
@@ -150,24 +152,31 @@ def submit(subType=None, actionType=None):
 
 
 
+    #############CUSTOMER
+    elif subType == "customers":
+        if actionType == "add":
+            insert_stmt = (
+                "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "
+                "VALUES (%s, %s, %s, %s)"
+            )
+            data = (request.form['FirstName'], request.form['LastName'], request.form['EmailAddress'], request.form['Sex'])
+            test = request.form['FirstName']
+        elif actionType == "delete":
+            insert_stmt = (
+                "DELETE FROM Customer WHERE idCustomer =%s"
+            )
+            data = (request.form['idCustomer'])
+            test = request.form['idCustomer']
+        elif actionType == "update":
+            insert_stmt = (""" UPDATE Customer
+                                    SET FirstName =%s, LastName =%s, EmailAddress =%s, Sex =%s
+                                    WHERE idCustomer =%s """)
+            data = (request.form['FirstName'],request.form['LastName'], request.form['EmailAddress'],request.form['Sex'],request.form['idCustomer'])
+            test = request.form['FirstName']
 
 
 
 
-
-    elif subType == "customer":
-        insert_stmt = (
-            "INSERT INTO Customer (FirstName, LastName, EmailAddress, Sex) "
-            "VALUES (%s, %d)"
-        )
-        data = (request.form['movieName'], request.form['Movie_idMovie'])
-    else:
-        subType == "attend"
-        insert_stmt = (
-            "INSERT INTO Attend (Showing_idShowing, Rating) "
-            "VALUES (%s,   %d)"
-        )
-        data = (request.form['movieName'], request.form['Movie_idMovie'])
 
     cursor.execute(insert_stmt, data)
     cnx.commit()
