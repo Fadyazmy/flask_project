@@ -16,8 +16,33 @@
          <input type="submit" value="Submit">
      </form>
 
+
+
+
+
+
+        <h3>Update movie</h3>
+        <form action="/submit/update/movies" method="post">
+        <select name ="idMovie" >
+            {% for movies in list %}
+            <option value="{{ movies.0 }} {{ movies.1 }}"> {{ movies.1 }}</option>
+            {% endfor %}
+        </select>
+        <br>
+         Movie name:<br>
+            <input type="text" name="movieName" value=""><br><br>
+         Movie year:<br>
+            <input type="number" min="0" name="movieYear" value=""><br><br>
+         <input type="submit" value="Submit">
+     </form>
+
+
+
+
+
+
         <h3>Delete movie</h3>
-        <form action="/submit/del/movies" method="post">
+        <form action="/submit/delete/movies" method="post">
          Movie name:<br>
             <input type="text" name="movieName" value=""><br><br>
          Movie year:<br>
@@ -34,13 +59,37 @@
     {#GENRE SECTION#}
     {% elif formType == 'genres' %}
         <h1>GENRES</h1>
-    <form action="/submit/ADD/movies" method="post">
+        <h3>Add Genre</h3>
+
+    <form action="/submit/add/genres" method="post">
+         Movie ID:
+            <select name="Movie_idMovie">
+                     {% for movies in list %}
+                <option value="{{ movies.0 }} {{ movies.1 }} "> {{ movies.1 }} </option>
+     {% endfor %}
+
+            </select>
+    <br>
+    Genre Name:
+            <input type="text" name="Genre" value=""><br><br>
+         <br>
+         <input type="submit" value="Submit">
+     </form>
+
+        <h3>Delete Genre</h3>
+           <form action="/submit/delete/genres" method="post">
          Genre name:<br>
             <input type="text" name="Genre" value=""><br><br>
          MovieID:<br>
             <input type="number" name="Movie_idMovie" value=""><br><br>
          <input type="submit" value="Submit">
      </form>
+
+
+    {% for genre in list %}
+            <span>{{ genre.0 }}  </span><br />
+     {% endfor %}
+
     {% elif formType == 'customer' %}
 
 

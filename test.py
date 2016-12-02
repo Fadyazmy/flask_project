@@ -33,15 +33,14 @@ def home():
 def movies(type=None):
     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
     cursor = cnx.cursor()
+    query=None
     if type == "movies":
         query = ("SELECT * FROM Movie ORDER BY MovieName ASC ")
-    elif type == "genre":
-        query = ("SELECT * FROM Genre ORDER BY Genre ASC ")
+    elif type == "genres":
+        query = ("SELECT * FROM Genre ORDER BY Genre ASC ") #TODO: FIND INERSECT TO RETURN MOVIE NAME
     cursor.execute(query)
     list = cursor.fetchall()
     return render_template('form.html', formType=type, list=list )
-
-
 
 
 
@@ -63,11 +62,17 @@ def submit(subType=None, actionType=None):
             data = (request.form['movieName'], request.form['movieYear'])
             test = request.form['movieName']
             print "INSERTING MOVIE" + test
-        elif actionType == "del":
+        elif actionType == "delete":
             insert_stmt = (
                 "DELETE FROM Movie WHERE MovieName =%s AND MovieYear=%s "
             )
             data = (request.form['movieName'], request.form['movieYear'])
+            test = request.form['movieName']
+        elif actionType == "update":
+            insert_stmt = (""" UPDATE Movie
+                        SET MovieName = %s, MovieYear = %s
+                        WHERE idMovie = %s """)
+            data = (request.form['movieName'],request.form['movieYear'], request.form['idMovie'])
             test = request.form['movieName']
     elif subType == "genre":
         if actionType == "add":
@@ -75,6 +80,12 @@ def submit(subType=None, actionType=None):
                     "INSERT INTO GENRE (Genre, Movie_idMovie) "
                     "VALUES (%s, %s)"
                 )
+            data = (request.form['Genre'], request.form['Movie_idMovie'])
+            test = request.form['Genre']
+        elif actionType =="del":
+            insert_stmt = (
+                "DELETE FROM Genre WHERE Genre =%s AND Movie_idMovie=%s "
+            )
             data = (request.form['Genre'], request.form['Movie_idMovie'])
             test = request.form['Genre']
     elif subType == "showing":
