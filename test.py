@@ -45,8 +45,8 @@ def movies(type=None):
     elif type == "customers":
         query = ("SELECT * FROM Customer ORDER BY LastName ASC")
     elif type == "attend":
-        query = ("SELECT FirstName, LastName, idShowing, ShowingDateTime, movieName FROM Customer, Showing, TheatreRoom, Movie, Attend WHERE Attend.Customer_idCustomer = Customer.idCustomer AND Attend.Showing_idShowing = Showing.idShowing ORDER BY Attend.Rating ASC")
-
+        query = ("SELECT FirstName, LastName, idShowing, ShowingDateTime, movieName                   FROM Customer, Showing, Movie, Attend WHERE Attend.Customer_idCustomer = Customer.idCustomer AND Attend.Showing_idShowing = Showing.idShowing AND Showing.Movie_idMovie = Movie.idMovie ORDER BY Attend.Rating ASC")
+        #query = ("SELECT Customer.FirstName,Customer.LastName,Showing.ShowingDateTime,Movie.MovieName from Attend,Customer,Showing,Movie                  WHERE Attend.Customer_idCustomer=Customer.idCustomer AND Attend.Showing_idShowing=Showing.idShowing AND Showing.Movie_idMovie=Movie.idMovie ORDER BY Attend.Rating DESC")
 
     cursor.execute(query)
     list = cursor.fetchall()
@@ -194,8 +194,8 @@ def submit(subType=None, actionType=None):
             test = request.form['idCustomer']
         elif actionType == "update":
             insert_stmt = (""" UPDATE Customer
-                                    SET FirstName =%s, LastName =%s, EmailAddress =%s, Sex =%s
-                                    WHERE idCustomer =%s """)
+                               SET FirstName =%s, LastName =%s, EmailAddress =%s, Sex =%s
+                               WHERE idCustomer =%s """)
             data = (request.form['FirstName'],request.form['LastName'], request.form['EmailAddress'],request.form['Sex'],request.form['idCustomer'])
             test = request.form['FirstName']
 
@@ -210,20 +210,6 @@ def submit(subType=None, actionType=None):
 
 
 
-
-# @app.route('/submit', methods=["POST"])
-# def submit():
-#     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
-#     cursor = cnx.cursor()
-#     insert_stmt = (
-#         "INSERT INTO Customer (firstname, lastname, EmailAddress, Sex) "
-#         "VALUES (%s, %s, %s, %s)"
-#     )
-#     data = (request.form['firstname'], request.form['lastname'], request.form['email'], request.form['sex'])
-#     cursor.execute(insert_stmt, data)
-#     cnx.commit()
-#     cnx.close()
-#     return render_template('index.html', firstname=request.form['firstname'], lastname=request.form['lastname'], email=request.form['email'], sex=request.form['sex'])
 
 @app.route('/sqlInjection')
 def sqlInjection(name=None):
