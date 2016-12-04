@@ -7,17 +7,20 @@
     {#MOVIE SECTION#}
     {%   if formType == 'movies' %}
     <h1>MOVIES</h1>
+
+
         <h3>Add movie</h3>
+{#        <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}" >#}
         <form action="/submit/add/movies" method="post">
          Movie name:<br>
             <input type="text" name="movieName" value=""><br><br>
          Movie year:<br>
             <input type="number" min="0" name="movieYear" value=""><br><br>
+            Attach Image:
+            <input type = "file" name = "file" />
          <input type="submit" value="Submit">
-     </form>
 
-
-
+         </form>
 
 
         <h3>Update movie</h3>
@@ -36,21 +39,20 @@
      </form>
 
 
-
-
-
         <h3>Delete movie</h3>
         <form action="/submit/delete/movies" method="post">
-         Movie name:<br>
-            <input type="text" name="movieName" value=""><br><br>
-         Movie year:<br>
-            <input type="number" min="0" name="movieYear" value=""><br><br>
-         <input type="submit" value="Submit">
+         <select name ="idMovie" >
+            {% for movies in list %}
+            <option value="{{ movies.0 }}"> {{ movies.0 }} - {{ movies.1 }}</option>
+            {% endfor %}
+        </select>
+            <input type="submit" value="Submit">
         </form>
+
         <br>
         <h3>LIST OF MOVIES </h3><br>
      {% for movies in list %}
-            <span>{{ movies.0 }} {{ movies.1 }} {{ movies.2 }} </span><br />
+            <span>{{ movies.0 }} {{ movies.1 }} {{ movies.2 }} {{ movies.3 }} </span><br />
      {% endfor %}
 
 
@@ -77,14 +79,20 @@
 
 
 
+
         <h3>Delete Genre</h3>
-           <form action="/submit/delete/genres" method="post">
-         Genre name:<br>
-            <input type="text" name="Genre" value=""><br><br>
-         MovieID:<br>
-            <input type="number" name="Movie_idMovie" value=""><br><br>
-         <input type="submit" value="Submit">
-     </form>
+        <form action="/submit/delete/genres" method="post">
+
+           <select name ="Movie_idMovie" >
+                {% for genre in list %}
+            <option value="{{ genre.1 }}"> {{ genre.0 }} - {{ genre.1 }}</option>
+                  {% endfor %}
+            </select>
+        Genre Name:
+        <input type="text" name="Genre" value=""><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
 
 
     {% for genre in list %}
