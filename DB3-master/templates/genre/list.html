@@ -1,0 +1,29 @@
+<th>Movie Genres </th>
+<div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Genre</th>
+      <th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+		<tr>
+		    <td>{{ user.0 }}</td>
+		    <td>{{ user.1 }} </td>
+		    <td>
+			    <form method="post" action="/genre/delete?id={{ user.0 }}" style="display: inline;">
+			    	<input type="submit" value="delete" />
+			    </form>
+		    </td>
+	    </tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+<a href="/genre/add"> Add Genre </a><br />
+<a href="/staff_log_in" class="btn btn-outline btn-xl page-scroll"> Main Page </a><br />
+

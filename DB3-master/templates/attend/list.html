@@ -1,0 +1,33 @@
+<th>Attendance Home Page: </th>
+<div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Customer ID</th>
+			<th>Theatre Room</th>
+			<th>Date & Time</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+			<th>Movie Name</th>
+			<th>Rating</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+		<tr>
+		    <td>{{ user.0 }}</td>
+		    <td>{{ user.1 }} </td>
+		    <td>{{ user.2 }}</td>
+        <td>{{ user.3 }}</td>
+        <td>{{ user.4 }}</td>
+        <td>{{ user.5 }}</td>
+        <td>{{ user.6 }}</td>
+        <td>{{ user.7 }}</td>
+	    </tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+<a href="/staff_log_in" class="btn btn-outline btn-xl page-scroll"> Main Page </a><br />
+

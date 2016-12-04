@@ -46,7 +46,7 @@ def movies(type=None):
     elif type == "customers":
         query = ("SELECT * FROM Customer ORDER BY LastName ASC")
     elif type == "attend":
-        query = ("SELECT FirstName, LastName, idShowing, ShowingDateTime, movieName  FROM Customer, Showing, Movie, Attend WHERE Attend.Customer_idCustomer = Customer.idCustomer AND Attend.Showing_idShowing = Showing.idShowing AND Showing.Movie_idMovie = Movie.idMovie ORDER BY Attend.Rating ASC")
+        query = ("SELECT FirstName, LastName, idShowing, ShowingDateTime, movieName, Attend.Rating FROM Customer, Showing, Movie, Attend WHERE Attend.Customer_idCustomer = Customer.idCustomer AND Attend.Showing_idShowing = Showing.idShowing AND Showing.Movie_idMovie = Movie.idMovie ORDER BY Attend.Rating ASC")
 
     cursor.execute(query)
     list = cursor.fetchall()
@@ -66,22 +66,16 @@ def submit(subType=None, actionType=None):
         # Filer request by type of modification
         if actionType == "add":
             insert_stmt = (
-                "INSERT INTO Movie (MovieName, MovieYear, moviePoster) "
-                "VALUES (%s, %s, %s)"
+                "INSERT INTO Movie (MovieName, MovieYear) "
+                "VALUES (%s, %s)"
             )
-            data = (request.form['movieName'], request.form['movieYear'], request.form['file'])
+            data = (request.form['movieName'], request.form['movieYear'])
             test = request.form['movieName']
         elif actionType == "delete":
-            id = request.form['idMovie']
             insert_stmt = (
                         "DELETE FROM Movie WHERE idMovie = %s;"
             )
-            data = (id,)
-            cursor.execute(insert_stmt, data)
-            print (cursor._executed)
-            cnx.commit()
-            cnx.close()
-            insert_stmt = None
+            data = (request.form['idMovie'],)
             test = request.form['idMovie']
 
         elif actionType == "update":
@@ -124,12 +118,14 @@ def submit(subType=None, actionType=None):
             )
             data = (request.form['RoomNumber'], request.form['Capacity'])
             test = request.form['RoomNumber']
+
         elif actionType == "delete":
             insert_stmt = (
-                "DELETE FROM TheatreRoom WHERE RoomNumber =%s"
+                "DELETE FROM TheatreRoom WHERE RoomNumber = %s;"
             )
-            data = (request.form['RoomNumber'])
+            data = (request.form['RoomNumber'],)
             test = request.form['RoomNumber']
+
         elif actionType == "update":
             insert_stmt = (""" UPDATE TheatreRoom
                                     SET Capacity = %s
@@ -152,7 +148,7 @@ def submit(subType=None, actionType=None):
             insert_stmt = (
                 "DELETE FROM Showing WHERE idShowing =%s"
             )
-            data = (request.form['idShowing'])
+            data = (request.form['idShowing'],)
             test = request.form['idShowing']
         elif actionType == "update":
             insert_stmt = (""" UPDATE Showing
@@ -177,7 +173,7 @@ def submit(subType=None, actionType=None):
             insert_stmt = (
                 "DELETE FROM Customer WHERE idCustomer =%s"
             )
-            data = (request.form['idCustomer'])
+            data = (request.form['idCustomer'],)
             test = request.form['idCustomer']
         elif actionType == "update":
             insert_stmt = (""" UPDATE Customer

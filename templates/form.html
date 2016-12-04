@@ -16,8 +16,7 @@
             <input type="text" name="movieName" value=""><br><br>
          Movie year:<br>
             <input type="number" min="0" name="movieYear" value=""><br><br>
-            Attach Image:
-            <input type = "file" name = "file" />
+
          <input type="submit" value="Submit">
 
          </form>
@@ -250,7 +249,7 @@
                 Customer ID:<br>
                <select name="idCustomer">
                    {% for showing in list %}
-                        <option value="{{ showing.0 }}">{{ showing.0 }}</option>
+                        <option value="{{ showing.0 }}">{{ showing.0 }} - {{ showing.1 }}</option>
                    {% endfor %}
                </select>
                 <input type="submit" value="Submit">
@@ -292,13 +291,36 @@
         {#SHOWINGS CUSTOMER#}
          {% elif formType == 'attend' %}
         <h1>Attendees</h1>
-
+{#FirstName, LastName, idShowing, ShowingDateTime, movieName, Attend.Rating#}
                     <br><br>
-                FirstName   | LastName   | EmailAddress       | Sex  <br>
-                    {% for attendee in list %}
-                            <span>{{ attendee.0 }} {{ attendee.1 }} {{attendee.2}} {{attendee.3}} </span><br />
-                    {% endfor %}
 
+        <table>
+        	<thead>
+		<tr>
+			<th>| FirstName</th>
+			<th>| LastName</th>
+			<th>| ShowingID</th>
+            <th>| ShowingDate</th>
+            <th>| MovieName</th>
+			<th>| Rating</th>
+		</tr>
+	</thead>
+        <tbody>
+        {% for user in list %}
+		<tr>
+		    <td>{{ user.0 }}</td>
+		    <td>{{ user.1 }} </td>
+		    <td>{{ user.2 }}</td>
+            <td>{{ user.3 }}</td>
+            <td>{{ user.4 }}</td>
+            <td>{{ user.5 }}</td>
+            <td>{{ user.6 }}</td>
+            <td>{{ user.7 }}</td>
+	    </tr>
+		{% endfor %}
+        </tbody>
+
+        </table>
 
 
 

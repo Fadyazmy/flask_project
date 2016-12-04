@@ -1,0 +1,35 @@
+<th>Theatre Room </th>
+<div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Room Number</th>
+			<th>Capacity</th>
+      <th>Delete</th>
+      <th>Modify</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+		<tr>
+		    <td>{{ user.0 }}</td>
+		    <td>{{ user.1 }} </td>
+		    <td>
+			    <form method="post" action="/room/delete?id={{ user.0 }}" style="display: inline;">
+			    	<input type="submit" value="delete" />
+			    </form>
+		    </td>
+            <td>
+			    <form method="post" action="/room/modifyselect?id={{ user.0 }}" style="display: inline;">
+			    	<input type="submit" value="modify" />
+			    </form>
+		    </td>
+	    </tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+<a href="/room/add"> Add Room </a><br />
+<a href="/staff_log_in" class="btn btn-outline btn-xl page-scroll"> Main Page </a><br />
+

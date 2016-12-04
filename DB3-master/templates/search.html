@@ -1,0 +1,44 @@
+<form action="/searchm" method=post>
+
+<h1>Search Movies </h1>
+
+By Genre: <br>
+{% for genre in genres %}
+<input list="genres" name="genre">
+  <datalist id="genres">
+    <option value={{genre.0}}>
+</datalist>
+{% endfor %}<br><br>
+
+By Date: <br>
+Start Date
+{% for stime in stimes %}
+<input list="stime" name="stime">
+  <datalist id="stime">
+    <option value={{stime.0}}>
+</datalist>
+{% endfor %}
+
+: End Date
+{% for etime in etimes %}
+<input list="etime" name="etime">
+  <datalist id="etime">
+    <option value={{etime.0}}>
+</datalist>
+{% endfor %}
+<br><br>
+By Available Shows:
+{% for user in user %}
+<input type="checkbox" id="cbox1" value="first_checkbox"> {{user.0}}<br>
+{% endfor %}
+<br><br>
+By Movie Title:
+<input type="text" name=search value="{{ request.form.search}}">
+<br>
+<br>
+<input type="submit" value="Submit">
+
+</form>
+
+
+

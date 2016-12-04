@@ -1,0 +1,37 @@
+<th>Movie Home Page: </th>
+<div>
+
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Year</th>
+			<th>Delete</th>
+			<th>Modify</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+		<tr>
+		    <td>{{ user.0 }}</td>
+		    <td>{{ user.1 }} </td>
+		    <td>{{ user.2 }}</td>
+		    <td>
+			    <form method="post" action="/movie/delete?id={{ user.0 }}" style="display: inline;">
+			    	<input type="submit" value="delete" />
+			    </form>
+		    </td>
+		    <td>
+		    <form method="post" action="/movie/modifyselect?id={{user.0}}" style="display: inline;">
+		    	<input type="submit" value="modify" />
+		    	</form>
+		    </td>
+	    </tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+<a href="/movie/add"> Add Movie </a><br />
+<a href="/staff_log_in" class="btn btn-outline btn-xl page-scroll"> Main Page </a><br />
+
