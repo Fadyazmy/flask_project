@@ -4,31 +4,10 @@ from werkzeug import secure_filename
 
 app = Flask(__name__)
 
-# @app.route("/")
-# def hello():
-#     cnx = mysql.connector.connect(user='root', database='MovieTheatre')
-#     cursor = cnx.cursor()
-#     query = ("SELECT * from Customer")
-#     cursor.execute(query)
-#     users=cursor.fetchall()
-#     cnx.close()
-#     return render_template('users.html',users=users)
-
-
 @app.route("/")
 def home():
     return render_template('index2.html')
 
-
-# cnx = mysql.connector.connect(user='root', database='mydb')
-# cursor = cnx.cursor()
-# query = ("SELECT * from Customer where firstname = '" + firstName + "'")
-# cursor.execute(query)
-# print("Attempting: " + query)
-# users = cursor.fetchall()
-#
-# cnx.commit()
-# cnx.close()
 
 @app.route('/back-end/<type>')
 def movies(type=None):
@@ -85,9 +64,6 @@ def submit(subType=None, actionType=None):
             data = (request.form['movieName'],request.form['movieYear'], request.form['idMovie'])
             test = request.form['movieName']
 
-
-
-
     #############GENRES
     elif subType == "genres":
         if actionType == "add":
@@ -104,10 +80,6 @@ def submit(subType=None, actionType=None):
             data = (request.form['Genre'],request.form['Movie_idMovie'])
             test = request.form['Genre']
             print ("BOOOO" + test)
-
-
-
-
 
     #############ROOMS
     elif subType == "rooms":
@@ -133,8 +105,6 @@ def submit(subType=None, actionType=None):
             data = (request.form['Capacity'],request.form['RoomNumber'])
             test = request.form['RoomNumber']
 
-
-
     #############SHOWINGS
     elif subType == "showings":
         if actionType == "add":
@@ -156,9 +126,6 @@ def submit(subType=None, actionType=None):
                                     WHERE idShowing = %s """)
             data = (request.form['TicketPrice'],request.form['idShowing'])
             test = request.form['idShowing']
-
-
-
 
     #############CUSTOMER
     elif subType == "customers":

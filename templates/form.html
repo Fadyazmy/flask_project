@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
+<body background="http://androidcentral.us/wp-content/uploads/2014/06/low-poly-texture-17.png?x56855" vlink="#FF3300" alink="#00CCCC">
+
 
     {#MOVIE SECTION#}
     {%   if formType == 'movies' %}
@@ -206,7 +208,7 @@
                     <br><br>
                 idShowing | ShowingDateTime  | Movie_idMovie | TheatreRoom_RoomNumber | TicketPrice  <br>
                     {% for showing in list %}
-                            <span>{{ showing.0 }} {{ showing.1 }} {{showing.2}} {{showing.3}} {{showing.4}}</span><br />
+                            <span>{{ showing.0 }} {{ showing.1 }} {{showing.2}} {{showing.3}} ${{showing.4}}</span><br />
                     {% endfor %}
 
 
@@ -291,59 +293,36 @@
         {#SHOWINGS CUSTOMER#}
          {% elif formType == 'attend' %}
         <h1>Attendees</h1>
-{#FirstName, LastName, idShowing, ShowingDateTime, movieName, Attend.Rating#}
                     <br><br>
-
         <table>
         	<thead>
-		<tr>
-			<th>| FirstName</th>
-			<th>| LastName</th>
-			<th>| ShowingID</th>
-            <th>| ShowingDate</th>
-            <th>| MovieName</th>
-			<th>| Rating</th>
-		</tr>
-	</thead>
+                    <tr>
+                        <th>| FirstName</th>
+                        <th>| LastName</th>
+                        <th>| ShowingID</th>
+                        <th>| ShowingDate</th>
+                        <th>| MovieName</th>
+                        <th>| Rating</th>
+                    </tr>
+	        </thead>
         <tbody>
-        {% for user in list %}
-		<tr>
-		    <td>{{ user.0 }}</td>
-		    <td>{{ user.1 }} </td>
-		    <td>{{ user.2 }}</td>
-            <td>{{ user.3 }}</td>
-            <td>{{ user.4 }}</td>
-            <td>{{ user.5 }}</td>
-            <td>{{ user.6 }}</td>
-            <td>{{ user.7 }}</td>
-	    </tr>
-		{% endfor %}
+            {% for user in list %}
+            <tr>
+                <td>{{ user.0 }}</td>
+                <td>{{ user.1 }} </td>
+                <td>{{ user.2 }}</td>
+                <td>{{ user.3 }}</td>
+                <td>{{ user.4 }}</td>
+                <td>{{ user.5 }}</td>
+                <td>{{ user.6 }}</td>
+                <td>{{ user.7 }}</td>
+            </tr>
+            {% endfor %}
         </tbody>
 
         </table>
 
-
-
-
-
-
-
     {% endif %}
-
-{#     <form action="/submit" method="post">#}
-{#     First name:<br>#}
-{#     <input type="text" name="firstname" value=""><br>#}
-{#     Last name:<br>#}
-{#     <input type="text" name="lastname" value=""><br><br>#}
-{#         Email:<br>#}
-{#     <input type="text" name="email" value=""><br><br>#}
-{#         Sex (M/F):<br>#}
-{#     <input type="text" name="sex" value=""><br><br>#}
-{#     <input type="submit" value="Submit">#}
-{# </form>#}
-
-
-
 
 
 
